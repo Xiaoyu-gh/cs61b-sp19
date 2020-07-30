@@ -6,9 +6,7 @@ public class Body {
     public double mass;
     public String imgFileName;
     
-    /**
-     * Constructor 1
-     */
+    /** Constructor 1 */
     public Body(double xP, double yP, double xV,
                   double yV, double m, String img) {
         xxPos = xP;
