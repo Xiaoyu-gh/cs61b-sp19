@@ -14,7 +14,7 @@ public class Body {
         xxVel = xV;
         yyVel = yV;
         mass = m;
-        imgFileName = "images/" + img;  // full path of imgFileName 
+        imgFileName = img; 
     }
     
     /**
@@ -99,7 +99,7 @@ public class Body {
     }
 
     public void draw() {
-        StdDraw.picture(xxPos, yyPos, imgFileName);
+        StdDraw.picture(xxPos, yyPos, "images/" + imgFileName);
 		StdDraw.show();
     }
 }
