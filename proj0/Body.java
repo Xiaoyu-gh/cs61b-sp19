@@ -14,7 +14,7 @@ public class Body {
         xxVel = xV;
         yyVel = yV;
         mass = m;
-        imgFileName = "images/" + img;  // full path of imgFileName 
+        imgFileName = img;  // full path of imgFileName 
     }
     
     /**
