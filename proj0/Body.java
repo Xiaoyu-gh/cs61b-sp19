@@ -14,7 +14,7 @@ public class Body {
         xxVel = xV;
         yyVel = yV;
         mass = m;
-        imgFileName = img;
+        imgFileName = "images/" + img;  // full path of imgFileName 
     }
     
     /**
@@ -83,8 +83,8 @@ public class Body {
     }
 
     /**
-     * update the position and velocity in time dt
-     * and netforce fx and fy
+     * update the position and velocity in small 
+     * time period dt and netforce fx and fy
      * @param dt
      * @param fx
      * @param fy
@@ -98,9 +98,10 @@ public class Body {
         yyPos = yyPos + yyVel * dt;
     }
 
-    
-
-
+    public void draw() {
+        StdDraw.picture(xxPos, yyPos, imgFileName);
+		StdDraw.show();
+    }
 }
 
 
