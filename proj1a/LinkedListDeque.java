@@ -1,14 +1,22 @@
 /**
  * Implements of LinkedListDeque.
+ *
+ * @author zxy
  */
 public class LinkedListDeque<T> {
 
+    /**
+     * Nested class TNode whit type T.
+     */
     private class TNode {
-        public T item;
-        public TNode prev;
-        public TNode next;
+        private T item;
+        private TNode prev;
+        private TNode next;
 
-        public TNode(TNode p, T i, TNode n) {
+        /**
+         * constructor of private TNode.
+         */
+        TNode(TNode p, T i, TNode n) {
             prev = p;
             item = i;
             next = n;
@@ -32,14 +40,13 @@ public class LinkedListDeque<T> {
      * Create a Deque copy from other.
      */
     public LinkedListDeque(LinkedListDeque other) {
-        // First create an empty deque.
+        /* First create an empty deque. */
         sentinel = new TNode(null, null, null);
         sentinel.prev = sentinel;
         sentinel.next = sentinel;
         size = 0;
 
-        //Then add(copy) each item.
-        for (int i =0; i < other.size; i++) {
+        for (int i = 0; i < other.size; i++) {
             addLast((T) other.get(i));
         }
     }
@@ -106,7 +113,7 @@ public class LinkedListDeque<T> {
         sentinel.next = temp;
         temp.prev = sentinel;
         size--;
-        return  removedItem;
+        return removedItem;
     }
 
     /**
@@ -137,7 +144,7 @@ public class LinkedListDeque<T> {
         }
         int i = 0;
         TNode p = sentinel.next;
-        while (i < index){
+        while (i < index) {
             p = p.next;
             i++;
         }
@@ -162,6 +169,5 @@ public class LinkedListDeque<T> {
     public T getRecursive(int index) {
         return getRecursive(index, sentinel.next);
     }
-
 
 }
