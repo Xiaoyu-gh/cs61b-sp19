@@ -1,5 +1,5 @@
 /**
- * Implements of LinkedListDeque.
+ * Implementation of LinkedListDeque.
  *
  * @author zxy
  */
@@ -36,20 +36,20 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    /**
-     * Create a Deque copy from other.
-     */
-    public LinkedListDeque(LinkedListDeque other) {
-        /* First create an empty deque. */
-        sentinel = new TNode(null, null, null);
-        sentinel.prev = sentinel;
-        sentinel.next = sentinel;
-        size = 0;
-
-        for (int i = 0; i < other.size; i++) {
-            addLast((T) other.get(i));
-        }
-    }
+//    /**
+//     * Create a Deque copy from other.
+//     */
+//    public LinkedListDeque(LinkedListDeque other) {
+//        /* First create an empty deque. */
+//        sentinel = new TNode(null, null, null);
+//        sentinel.prev = sentinel;
+//        sentinel.next = sentinel;
+//        size = 0;
+//
+//        for (int i = 0; i < other.size; i++) {
+//            addLast((T) other.get(i));
+//        }
+//    }
 
     /**
      * Adds an item of type T to the front of the deque.
