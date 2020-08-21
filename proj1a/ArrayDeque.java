@@ -40,7 +40,7 @@ public class ArrayDeque<T> {
      * Private helper method :Resizes the array to the target newSize.
      * (Actually it create a new array.)
      */
-    public void resize(int newSize) {
+    private void resize(int newSize) {
         T[] temp = (T[]) new Object[newSize];
         System.arraycopy(items, nextFirst + 1, temp, newSize / 4, size);
         items = temp;
