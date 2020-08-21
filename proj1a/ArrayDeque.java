@@ -37,17 +37,16 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * Private helper method :Resizes the array to the target newSize.
+     * Private helper method: resizes the array to the target capacity.
      * (Actually it create a new array.)
      */
-    private void resize(int newSize) {
-        T[] temp = (T[]) new Object[newSize];
-        System.arraycopy(items, nextFirst + 1, temp, newSize / 4, size);
+    private void resize(int capacity) {
+        T[] temp = (T[]) new Object[capacity];
+        System.arraycopy(items, nextFirst + 1, temp, capacity / 4, size);
         items = temp;
-        nextFirst = newSize / 4 - 1;
+        nextFirst = capacity / 4 - 1;
         nextLast = nextFirst + size + 1;
     }
-
 
     /**
      * Add an item to the back of the ArrayDeque.
@@ -93,8 +92,15 @@ public class ArrayDeque<T> {
 
     /**
      * Remove and return the last item of array.
+     * Downsize the array when memory usage less than 1/4.
      */
     public T removeLast() {
+        if (size == 0) {
+            return null;
+        }
+        if (size <= items.length / 4) {
+            resize(items.length / 2);
+        }
         T toRemove = items[nextLast - 1];
         items[nextLast - 1] = null;
         size--;
@@ -104,8 +110,15 @@ public class ArrayDeque<T> {
 
     /**
      * Remove and return the first item of array.
+     * Downsize the array when memory usage less than 1/4.
      */
     public T removeFirst() {
+        if (size == 0) {
+            return null;
+        }
+        if (size <= items.length / 4) {
+            resize(items.length / 2);
+        }
         T toRemove = items[nextFirst + 1];
         items[nextFirst + 1] = null;
         size--;
