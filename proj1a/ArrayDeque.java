@@ -18,16 +18,16 @@ public class ArrayDeque<T> {
         nextLast = 4;
     }
 
-//    /**
-//     * Create a copy from other.
-//     */
-//    public ArrayDeque(ArrayDeque other) {
-//        size = other.size;
-//        nextFirst = other.nextFirst;
-//        nextLast = other.nextLast;
-//        items = (T[]) new Object[other.items.length];
-//        System.arraycopy(other.items, 0, items, 0, items.length);
-//    }
+    /**
+     * Create a copy from other.
+     */
+    public ArrayDeque(ArrayDeque other) {
+        size = other.size;
+        nextFirst = other.nextFirst;
+        nextLast = other.nextLast;
+        items = (T[]) new Object[other.items.length];
+        System.arraycopy(other.items, 0, items, 0, items.length);
+    }
 
     /**
      * Return the size of the ArrayDeque.
